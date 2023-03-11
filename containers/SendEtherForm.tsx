@@ -68,6 +68,20 @@ const SendEtherForm: FC = () => {
     if (web3) {
       try {
         const [account, ..._] = await web3.eth.getAccounts();
+        // web3.eth
+        //   .sendTransaction({
+        //     from: account,
+        //     to: toAddress,
+        //     value: web3.utils.toWei(ammountInEth, "ether"),
+        //   })
+        //   .on("transactionHash", function (hash) {
+        //     console.log("Transaction hash:", hash);
+        //     setLoading(false);
+        //   })
+        //   .on("receipt", function (receipt) {
+        //     console.log("Transaction receipt:", receipt);
+        //     setTxReciept(receipt);
+        //   })
         const txHash = await web3?.eth.sendTransaction({
           from: account,
           to: toAddress,
@@ -78,7 +92,6 @@ const SendEtherForm: FC = () => {
       } catch (error) {
         console.error(error);
         setError((error as Error).message);
-      } finally {
         setLoading(false);
       }
     }

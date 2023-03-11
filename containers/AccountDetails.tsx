@@ -24,11 +24,7 @@ const AccountDetails: FC = () => {
         }
       };
       getBalance();
-    }
-  }, [web3]);
 
-  useEffect(() => {
-    if (web3) {
       const getAddress = async () => {
         const accountAddress = await getAccount(web3);
         if (accountAddress) {
@@ -46,7 +42,7 @@ const AccountDetails: FC = () => {
       </p>
 
       <p>
-        Address: {formatAccountToReadable(address)}{" "}
+        Address: {formatAccountToReadable(address)}
         <Tooltip title="Copy to clipboard">
           <IconButton onClick={copyToclipboard}>
             <ContentCopy fontSize="small" />

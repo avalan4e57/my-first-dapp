@@ -1,6 +1,5 @@
 import { FC, useContext } from "react";
 import SendEtherForm from "./SendEtherForm";
-// import TotalBalance from "./TotalBalance";
 import { web3Context } from "../contexts/Web3Context";
 import AccountDetails from "./AccountDetails";
 

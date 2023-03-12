@@ -92,9 +92,9 @@ const SendEtherForm: FC = () => {
       } catch (error) {
         console.error(error);
         setError((error as Error).message);
-        setLoading(false);
       }
     }
+    setLoading(false);
   };
 
   return (
